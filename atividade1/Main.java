@@ -13,5 +13,7 @@ public class Main {
         System.out.println("1:"+ calc.verificarNumeroPrimo(1));
         System.out.println("2:"+ calc.verificarNumeroPrimo(2));
         System.out.println("4:"+ calc.verificarNumeroPrimo(4));
+        System.out.println("11:"+ calc.verificarNumeroPrimo(11));
     }
+    
 }

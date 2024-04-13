@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Sistema {
 
-    public static void main(String[] args) {
+public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
         int opcao = 0;
@@ -19,22 +19,7 @@ public class Sistema {
 
             switch (opcao) {
                 case 1:
-                    System.out.println("Adicionando livro");
-                    int id; String titulo; 
-                    String nomeAutor; String anoPublicacao; String editora;
-                    System.out.println("Id: ");
-                    id = sc.nextInt();
-                    sc.nextLine();
-                    System.out.println("Título: ");
-                    titulo = sc.nextLine();
-                    System.out.println("Autor: ");
-                    nomeAutor = sc.nextLine();
-                    System.out.println("Ano: ");
-                    anoPublicacao = sc.nextLine();
-                    System.out.println("Editora: ");
-                    editora = sc.nextLine();
-
-                    Livro l = new Livro(id, titulo, nomeAutor, anoPublicacao, editora);
+                    Livro l = criarLivro(sc);
                     livraria.cadastrarLivro(l);
                     break;
                 case 2:
@@ -43,6 +28,11 @@ public class Sistema {
                     break;
                 case 3:
                     System.out.println("Detalhando livro");
+                    int id;
+                    System.out.println("Id: ");
+                    id = sc.nextInt();
+                    sc.nextLine();
+                    System.out.println(livraria.detalharlivroPorId(id));
                     break;
                 case 4:
                     System.out.println("Encerrando o sistema");
@@ -54,6 +44,27 @@ public class Sistema {
 
         }
         sc.close();
+
+    }
+    private static Livro criarLivro (Scanner sc){
+        System.out.println("Adicionando livro");
+        int id; String titulo; 
+        String nomeAutor; String anoPublicacao; String editora;
+        System.out.println("Id: ");
+        id = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Título: ");
+        titulo = sc.nextLine();
+        System.out.println("Autor: ");
+        nomeAutor = sc.nextLine();
+        System.out.println("Ano: ");
+        anoPublicacao = sc.nextLine();
+        System.out.println("Editora: ");
+        editora = sc.nextLine();
+
+        Livro l = new Livro(id, titulo, nomeAutor, anoPublicacao, editora);
+        return l;
+        
 
     }
 
